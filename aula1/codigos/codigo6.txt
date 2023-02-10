@@ -1,0 +1,7 @@
+<h:form>
+	Nome: <h:inputText />
+	<br />
+	Sobrenome: <h:inputText />
+	<br />
+	<h:commandButton value ="Dizer olá" action = "#{pessoaController.dizerOla}"/>
+</h:form>
