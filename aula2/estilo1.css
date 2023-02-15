@@ -1,0 +1,19 @@
+#titulo{
+    text-align: center;
+    
+}
+
+.localhost{
+    color: red;
+}
+
+body{
+    font-size: 115%;
+    text-align: justify;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.img{
+    text-align: center;
+}

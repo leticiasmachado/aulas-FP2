@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Aula 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="estilo1.css"/>
+    </head>
+    <body>
+        <h3>Criando Classes de Modelo</h3>
+        <p>
+            Para acessar os valores escritos no formulário, precisamos criar os atributos nome e sobrenome na classe de 
+            PessoaController e seus respectivos getters e setters. Depois, é só associar os campos de inputText com o nome do 
+            atributo que será atribuído. 
+        </p>    
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo1.txt" height="190" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Crie um pacote entity para armazenar as informações da pessoa, com seus getters e setters. Na casse PessoaController, 
+            os atributos são substituídos por um atributo Pessoa. Adicionar getPessoa e setPessoa. Classe PessoaController:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo2.txt" height="330" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Para definir os valores do formulário, será necessário adicionar pessoa, da seguinte maneira:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo3.txt" height="150" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            O código vai obter um erro porque não foi instanciado um objeto Pessoa. Para resolver isso é necessário instanciar o 
+            objeto num construtor sem parâmetros.
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo4.txt" height="100" width="1200"></iframe>
+        </div>
+        <br/>
+
+        <p>
+            Para exibir o nome digitado no formulário na tela, o index precisa estar assim: 
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo5.txt" height="60" width="1200"></iframe>
+        </div>
+        <br/>
+        
+        
+        <h3>Criando List de Pessoa</h3>
+        <p>
+            Vamos criar uma lista para armazenar as pessoas adicionadas. Alterações no PessoaController:
+            <ul>
+                <li>criar uma private List</li>
+                <li>instanciar a List no construtor</li>
+                <li>adicionar pessoa na List no método dizerOla</li>
+                <li>criar método public para exibir</li>
+            </ul>
+            Código do controller: 
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo6.txt" height="300" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            A lista não será salva no navegador por conta do escopo que estamos usando (<i>@RequestScoped</i>). Com esse tipo de 
+            escopo, a cada vez que a classe PessoaController seja chamada, um novo bean será criado. O novo escopo utilizado será o 
+            <i>@SessionScoped</i>, que mantém os dados durante toda a sessão. Basta substituir uma anotacão por outra na classe controller
+        </p>
+        <p>
+            Além disso, é preciso instanciar novamente o objeto pessoa após adicioná-lo na lista, para evitar duplicidade. Isto ocorre
+            porque diferentes objetos estão apontando para um mesmo endereço de memória. Para corrigir o método adicionar:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo7.txt" height="100" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Para exibir melhor os resultados da lista, podemos criar uma tabela. Código da tabela (usando JSF)
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo8.txt" height="160" width="1200"></iframe>
+        </div>
+        <br/>
+
+        <h:form>
+
+            Nome: <h:inputText value="#{pessoaController.pessoa.nome}"/>
+            <br />
+            Sobrenome <h:inputText value="#{pessoaController.pessoa.sobrenome}"/>
+            <br />
+            <h:commandButton value="Dizer olá" 
+                             action="#{pessoaController.dizerOla}" />
+
+        </h:form>
+
+    </body>
+
+</html>
