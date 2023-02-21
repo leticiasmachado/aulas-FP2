@@ -1,0 +1,2 @@
+<p:outputLabel for="dataNascimento" value="Data de Nascimento: "/>
+<p:datePicker id="dataNascimento" value="#{pessoaController.pessoa.dataNascimento}" />

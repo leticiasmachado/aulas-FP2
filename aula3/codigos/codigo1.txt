@@ -1,0 +1,10 @@
+<h:form>
+
+	Nome: <p:inputText value="#{pessoaController.pessoa.nome}"/>
+        <br />
+        Sobrenome <p:inputText value="#{pessoaController.pessoa.sobrenome}"/>
+        <br />
+        <p:commandButton value="Adicionar" 
+              action="#{pessoaController.adicionar}" />
+
+</h:form>

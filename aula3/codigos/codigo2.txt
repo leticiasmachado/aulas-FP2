@@ -1,0 +1,1 @@
+“<p:commandButton value="Adicionar" update="tabela" action="#{pessoaController.adicionar}" />

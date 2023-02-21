@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:p="http://primefaces.org/ui" >
+    <head>
+        <title>Aula 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="estilo1.css"/>
+    </head>
+    <body>
+        <h1 id="titulo"> Aula 3 - Biblioteca PrimeFaces e Messages</h1>
+        <h3>Usando a biblioteca PrimeFaces</h3>
+        <p>
+            Entre no <a href="https://repo1.maven.org/maven2/org/primefaces/primefaces/12.0.0/">link</a> 
+            no moodle e faça o download do arquivo “primefaces-12.0.0-jakarta.jar”. Crie uma pasta no 
+            projeto chamada “libraries” e adicione o arquivo na pasta, depois vincule-o ao seu projeto 
+            no NetBeans.
+        </p>    
+        <p>
+            Acesse o site www.primefaces.org → menu → demo. Copie os componentes que forem do seu interesse. 
+            Copie o componente input text e insira-o nas tags que já criamos anteriormente
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo1.txt" height="180" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Para que funcione corretamente, é necessário colocar o link xmlns:p="http://primefaces.org/ui" 
+            na tag html. Para que o botão de adicionar atualize a tabela, colocaremos o código abaixo e 
+            definiremos o id “tabela” na tag "p:dataTable".
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo2.txt" height="40" width="1200"></iframe>
+        </div>
+        <br/>
+        
+        <h3>Data</h3>
+        
+        <p>
+            Adicione o atributo dataNascimento na classe Pessoa (pacote entity, declarado como "private 
+            LocalDate dataNascimento;". Pesquise por dataPicker no prime faces, e escolha a mais básica.
+            Gere o get e set do dataNascimento na classe Pessoa. No index, adicione o código copiado do 
+            site referente ao label e ao input do dataPicker. Altere os atributos for, id e value, para 
+            ficar assim:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo3.txt" height="60" width="1200"></iframe>
+        </div>
+        <br/>
+        
+        
+        <h3>Estilizando Formulário</h3>
+        <p>
+            Usar a tag "p:panelGrid columns=”2”" para melhorar a aparencia do formulário. 
+            Formulário refeito:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo4.txt" height="270" width="1200"></iframe>
+        </div>
+        <br/>
+
+        <h3>Adicionar datas máximas e mínimas no datePicker</h3>
+        <p>
+            Na classe pessoaController:
+            <ul>
+                <li>private final LocalDate dataMinima = LocalDate.now().minusWeeks(1);</li>
+                <li>private final LocalDate dataMaxima = LocalDate.now().plusWeeks(1);</li>
+                <li>e adicionar get dos dois atributos.</li>
+            </ul>
+            DatePicker com máximo e mínimo:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo5.txt" height="110" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Observação: o "readonlyInput" faz com que a pessoa não possa digitar a data, apenas selecionar
+            no datePicker. É ideal para evitar que o usuário digite letras ou símbolos em vez de números.
+        </p>
+        
+        <h3>Messages</h3>
+        <p>
+            No site, pesquise por “messages”. Vamos dar avisos pro usuário preencher os campos do 
+            formulário. Em MessagesView.java, copie os métodos e coloque-os em uma nova classe chamada 
+            Util. Para não precisar instanciar a classe, os métodos são estáticos. Além disso, foram 
+            feitas algumas alterações no código. No index, dentro da tag form: 
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo6.txt" height="75" width="1200"></iframe>
+        </div>
+        <br/>
+        <p>
+            Na classe controle, no método adicionar, coloque: <i>Util.mensagemInfo("Pessoa cadastrada");</i>.
+        </p>
+        <p>
+            O código da classe Util ficará da seguinte maneira:
+        </p>
+        <br/>
+        <div class="img">
+            <iframe src="codigos/codigo7.txt" height="310" width="1200"></iframe>
+        </div>
+        <br/>
+    </body>
+
+</html>

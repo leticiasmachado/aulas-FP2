@@ -1,0 +1,9 @@
+        <!-- esse valor passado por parametro precisa ser uma lista -->
+        <h:dataTable value ="#{pessoaController.pessoas}" var="pessoa">
+            <h:column>
+                #{pessoa.nome}
+            </h:column>
+            <h:column>
+                #{pessoa.sobrenome}
+            </h:column>
+        </h:dataTable>

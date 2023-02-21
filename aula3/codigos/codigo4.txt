@@ -1,0 +1,16 @@
+<h:form>
+	<p:panelGrid columns="2">
+		<p:outputLabel for="nome" value="Nome: "/>
+                <p:inputText value="#{pessoaController.pessoa.nome}" id="nome"/>
+
+		<p:outputLabel for="sobrenome" value="Sobrenome: "/>
+                <p:inputText value="#{pessoaController.pessoa.sobrenome}" id="sobrenome"/>
+
+		<p:outputLabel for="dataNascimento" value="Data de nascimento: "/>
+		<p:dataPicker id="dataNascimento" value="#{pessoaController.pessoa.dataNascimento}"/>
+	</p:panelGrid>
+	
+	<p:commandButton value="Adicionar" 
+                             action="#{pessoaController.dizerOla}" />
+
+</h:form>

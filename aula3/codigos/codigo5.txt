@@ -1,0 +1,5 @@
+<p:outputLabel for="minmax" value="Data com limite"/>
+<p:datePicker id="minmax" 
+	mindate="#{pessoaController.dataMinima}"
+	maxdate="#{pessoaController.dataMaxima}"
+	readonlyInput="true"/>

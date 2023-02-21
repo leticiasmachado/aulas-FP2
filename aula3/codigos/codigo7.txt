@@ -1,0 +1,19 @@
+package br.edu.ifsp.pep.util;
+
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
+
+public class Util {
+
+    public static void mensagemInfo(String mensagem) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", mensagem));
+    }
+
+    public static void mensagemError(String mensagem) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Warning", mensagem));
+    }
+
+    public static void mensagemWarning(String mensagem) {
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", mensagem));
+    }
+}

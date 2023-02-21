@@ -1,0 +1,5 @@
+    private Pessoa pessoa;
+    
+    public PessoaController() {
+        this.pessoa = new Pessoa();
+    }
