@@ -1,1 +1,0 @@
-<h:commandButton value ="Dizer olá" action = "#{pessoaController.dizerOla}"/>
