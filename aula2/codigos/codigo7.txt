@@ -1,5 +1,0 @@
-    public void adicionar() {
-        this.pessoas.add(pessoa);
-        pessoa = new Pessoa();
-        exibir();
-    }

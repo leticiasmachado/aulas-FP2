@@ -1,2 +1,0 @@
-	<h:outputText value ="#{pessoaController.pessoa.nome} "/>
-        <h:outputText value ="#{pessoaController.pessoa.sobrenome}" />
